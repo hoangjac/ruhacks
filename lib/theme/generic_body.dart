@@ -5,8 +5,9 @@ import 'package:ruhacks/theme/display.dart';
 class GenericBody extends StatelessWidget {
   final String title;
   final Color titleBackgroundColor;
-  const GenericBody({this.title, this.titleBackgroundColor});
-  
+  final bool onPop;
+  const GenericBody({this.title, this.titleBackgroundColor, this.onPop});
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -28,21 +29,25 @@ class GenericBody extends StatelessWidget {
                     colors: [Color(0xFFF6F7FB), Color(0xfff6f7fb)])),
           ),
         ),
+
+        //increase clickable area
         Positioned(
-            top: 75.h,
+            top: 40.h,
             left: 0,
             child: Align(
               alignment: Alignment.bottomCenter,
-              child: Padding(
-                  padding: EdgeInsets.fromLTRB(80.h, 40.h, 10.h, 40.h),
-                  child: IconButton(
-                    icon: Icon(
-                      Icons.arrow_back_ios,
-                      color: Colors.white,
-                      size: 40.w,
-                    ),
-                    onPressed: ,
-                  )),
+              child: GestureDetector(
+                child: Padding(
+                    padding: EdgeInsets.fromLTRB(10.h, 40.h, 10.h, 40.h),
+                    child: IconButton(
+                      icon: Icon(
+                        Icons.arrow_back_ios,
+                        color: Colors.white,
+                        size: 55.w,
+                      ),
+                      onPressed: () => Navigator.pop(context),
+                    )),
+              ),
             )),
         Positioned(
             top: 75.h,

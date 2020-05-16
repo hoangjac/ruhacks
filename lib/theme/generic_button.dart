@@ -10,6 +10,7 @@ class GenericButton extends StatelessWidget {
   final double width;
   final bool isBold;
   final Function action;
+  final bool modifyText;
 
   const GenericButton({
     Key key,
@@ -19,6 +20,7 @@ class GenericButton extends StatelessWidget {
     this.isBold,
     this.action,
     this.showPrimary,
+    this.modifyText,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
