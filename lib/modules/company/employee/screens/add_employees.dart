@@ -135,3 +135,57 @@ class _AddEmployeesState extends State<AddEmployees> {
         ));
   }
 }
+
+/*
+            Align(
+              alignment: Alignment.bottomRight,
+              child: Padding(
+                  padding: EdgeInsets.fromLTRB(0, 0, 50.w, 350.h),
+                  child: Container(
+                    width: 250.w,
+                    height: 90.h,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        gradient: LinearGradient(colors: <Color>[
+                          Color(0xFFFF7D56),
+                          Color(0xFFFF997A)
+                        ]),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey[500],
+                            offset: Offset(0.0, 1.5),
+                            blurRadius: 1.5,
+                          ),
+                        ]),
+                    child: Material(
+                      color: Colors.transparent,
+                      child: InkWell(
+                          onTap: () =>
+                              Navigator.pushNamed(context, Register.route),
+                          child: Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Center(
+                                child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: <Widget>[
+                                Text(
+                                  "Next",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w400),
+                                ),
+                                SizedBox(
+                                  width: 10.w,
+                                ),
+                                Icon(
+                                  Icons.arrow_forward,
+                                  color: Colors.white,
+                                  size: 50.w,
+                                ),
+                              ],
+                            )),
+                          )),
+                    ),
+                  )),
+            )
+            */

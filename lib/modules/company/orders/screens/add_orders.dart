@@ -77,15 +77,61 @@ class _AddOrdersState extends State<AddOrders> {
                       SizedBox(
                         height: 60.h,
                       ),
+                      Display(
+                        text: "STEPS\n(2-10)",
+                        color: Color(0xFF414C60),
+                        display: 4,
+                      ),
+                      SizedBox(
+                        height: 25.h,
+                      ),
+                      Container(
+                        height: MediaQuery.of(context).size.height,
+                        width: MediaQuery.of(context).size.width,
+                        child: ListView.builder(
+                            itemCount: 2,
+                            itemBuilder: (BuildContext context, int i) {
+                              return Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: MaterialField(
+                                  child: TextFormField(
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      fontFamily: 'OpenSans',
+                                    ),
+                                    decoration: InputDecoration(
+                                      border: OutlineInputBorder(
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(10)),
+                                          borderSide: BorderSide(
+                                            width: 1,
+                                          )),
+                                    ),
+                                    keyboardType: TextInputType.text,
+                                    showCursor: true,
+                                    validator: (value) {
+                                      if (value.isEmpty) {
+                                        return 'Please provide an industry';
+                                      }
+                                      return null;
+                                    },
+                                    onSaved: (value) {},
+
+                                    // child: Text("This is where your content goes")
+                                  ),
+                                ),
+                              );
+                            }),
+                      )
                     ],
                   ),
                 ),
               ),
             ),
             Align(
-              alignment: Alignment.bottomCenter,
+              alignment: Alignment.bottomRight,
               child: Padding(
-                  padding: EdgeInsets.fromLTRB(0, 0, 0, 350.h),
+                  padding: EdgeInsets.fromLTRB(0, 0, 50.w, 350.h),
                   child: Container(
                     width: 250.w,
                     height: 90.h,
