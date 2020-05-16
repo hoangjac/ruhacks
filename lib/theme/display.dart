@@ -29,7 +29,7 @@ class Display extends StatelessWidget {
       case 2:
         return Text(text,
             style: TextStyle(
-              fontSize: 50.w + incrementSize,
+              fontSize: 55.w + incrementSize,
               fontWeight: isBold == null ? FontWeight.w400 : FontWeight.bold,
               color: color == null ? Colors.black : color,
             ));

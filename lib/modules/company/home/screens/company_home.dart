@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:ruhacks/modules/company/home/screens/widgets/generic_card.dart';
-import 'package:ruhacks/theme/display1.dart';
+import 'package:ruhacks/modules/company/home/widgets/generic_card.dart';
+import 'package:ruhacks/theme/display.dart';
 
 class CompanyHome extends StatelessWidget {
   static String route = "/companyPortal";

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:ruhacks/theme/display1.dart';
+import 'package:ruhacks/theme/display.dart';
 
 class GenericCard extends StatelessWidget {
   final Function action;

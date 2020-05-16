@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ruhacks/modules/company/auth/screens/register.dart';
-import 'package:ruhacks/modules/home/widgets/genericButton.dart';
+import 'package:ruhacks/theme/generic_button.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -55,7 +55,7 @@ class Home extends StatelessWidget {
             )),
         Positioned(
             top: 1150.h,
-            left: MediaQuery.of(context).size.width / 4,
+            left: MediaQuery.of(context).size.width / 4.8,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
