@@ -4,20 +4,16 @@ import 'package:json_annotation/json_annotation.dart';
 //the name of the company, select industry*, (username, password, address, profession)
 @JsonSerializable(nullable: false)
 class RegisterModel {
-  final String nameOfCompany;
-  final String industry;
-  final String username;
+  final String company_id;
+  final String company_name;
   final String password;
   final String address;
-  final String profession;
+  final String email;
+  final String city;
+  final String industry;
 
-  RegisterModel(
-      {this.nameOfCompany,
-      this.industry,
-      this.username,
-      this.password,
-      this.address,
-      this.profession});
+  RegisterModel(this.company_id, this.company_name, this.password, this.address,
+      this.email, this.city, this.industry);
 
 /*
   factory RegisterModel.fromJson(Map<String, dynamic> json) =>
