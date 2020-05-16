@@ -5,8 +5,15 @@ class Display extends StatelessWidget {
   final String text;
   final int display;
   final Color color;
+  final bool isBold;
+  final double incrementSize;
 
-  const Display({this.text, this.display, this.color});
+  const Display(
+      {this.text,
+      this.display,
+      this.color,
+      this.isBold,
+      this.incrementSize = 0});
   @override
   Widget build(BuildContext context) {
     switch (display) {
@@ -22,23 +29,24 @@ class Display extends StatelessWidget {
       case 2:
         return Text(text,
             style: TextStyle(
-                fontSize: 50.w,
-                fontWeight: FontWeight.w400,
-                color: color == null ? Colors.black : color));
+              fontSize: 50.w + incrementSize,
+              fontWeight: isBold == null ? FontWeight.w400 : FontWeight.bold,
+              color: color == null ? Colors.black : color,
+            ));
         break;
 
       case 3:
         return Text(text,
             style: TextStyle(
-                fontSize: 40.w,
-                fontWeight: FontWeight.w400,
+                fontSize: 40.w + incrementSize,
+                fontWeight: isBold == null ? FontWeight.w400 : FontWeight.bold,
                 color: color == null ? Colors.black : color));
         break;
 
       case 4:
         return Text(text,
             style: TextStyle(
-                fontSize: 30.w,
+                fontSize: 30.w + incrementSize,
                 fontWeight: FontWeight.bold,
                 letterSpacing: 2.w,
                 color: color == null ? Colors.black : color));

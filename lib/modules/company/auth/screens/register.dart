@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:ruhacks/modules/company/home/screens/company_home.dart';
 import 'package:ruhacks/modules/home/widgets/genericButton.dart';
 import 'package:ruhacks/theme/display1.dart';
 import 'package:ruhacks/theme/materialField.dart';
@@ -236,7 +237,7 @@ class _RegisterState extends State<Register> {
                     padding:
                         EdgeInsets.symmetric(horizontal: 10.h, vertical: 50.h),
                     action: () {
-                    Navigator.of(context).pushNamed(routeName)
+                      Navigator.of(context).pushNamed(CompanyHome.route);
                     },
                   ),
                 ),
