@@ -86,41 +86,65 @@ class _AddOrdersState extends State<AddOrders> {
                         height: 25.h,
                       ),
                       Container(
-                        height: MediaQuery.of(context).size.height,
+                        height: ,
                         width: MediaQuery.of(context).size.width,
                         child: ListView.builder(
                             itemCount: 2,
                             itemBuilder: (BuildContext context, int i) {
                               return Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: MaterialField(
-                                  child: TextFormField(
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      fontFamily: 'OpenSans',
-                                    ),
-                                    decoration: InputDecoration(
-                                      border: OutlineInputBorder(
-                                          borderRadius: BorderRadius.all(
-                                              Radius.circular(10)),
-                                          borderSide: BorderSide(
-                                            width: 1,
-                                          )),
-                                    ),
-                                    keyboardType: TextInputType.text,
-                                    showCursor: true,
-                                    validator: (value) {
-                                      if (value.isEmpty) {
-                                        return 'Please provide an industry';
-                                      }
-                                      return null;
-                                    },
-                                    onSaved: (value) {},
+                                  padding: const EdgeInsets.all(10),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: <Widget>[
+                                      Column(
+                                        children: <Widget>[
+                                          SizedBox(
+                                            height: 40.h,
+                                          ),
+                                          Image.asset(
+                                            "images/circle.png",
+                                            height: 90.h,
+                                            width: 120.w,
+                                          ),
+                                          Image.asset(
+                                            "images/solid.png",
+                                            height: 140.h,
+                                          )
+                                        ],
+                                      ),
+                                      Container(
+                                        width: 700.w,
+                                        child: MaterialField(
+                                          child: TextFormField(
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontFamily: 'OpenSans',
+                                            ),
+                                            decoration: InputDecoration(
+                                              border: OutlineInputBorder(
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(10)),
+                                                  borderSide: BorderSide(
+                                                    width: 1,
+                                                  )),
+                                            ),
+                                            keyboardType: TextInputType.text,
+                                            showCursor: true,
+                                            validator: (value) {
+                                              if (value.isEmpty) {
+                                                return 'Please provide an industry';
+                                              }
+                                              return null;
+                                            },
+                                            onSaved: (value) {},
 
-                                    // child: Text("This is where your content goes")
-                                  ),
-                                ),
-                              );
+                                            // child: Text("This is where your content goes")
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ));
                             }),
                       )
                     ],
