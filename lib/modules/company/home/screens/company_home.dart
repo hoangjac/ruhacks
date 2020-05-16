@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:ruhacks/modules/company/home/screens/widgets/generic_card.dart';
 import 'package:ruhacks/theme/display1.dart';
 
 class CompanyHome extends StatelessWidget {
@@ -51,32 +52,54 @@ class CompanyHome extends StatelessWidget {
                   text: "Home",
                   color: Theme.of(context).primaryColor,
                   display: 2,
+                  incrementSize: 5.h,
                 ),
               ),
               SizedBox(
                 height: 90.h,
               ),
-              Stack(
-                children: <Widget>[
-                  Container(
-                    height: 350.h,
-                    width: 900.w,
-                    decoration: BoxDecoration(
-                      color: Theme.of(context).primaryColor,
-                      borderRadius: BorderRadius.circular(30.h),
-                    ),
+              GenericCard(
+                height: 350.h,
+                width: 900.w,
+                action: () {},
+                text: "Orders",
+              ),
+              SizedBox(
+                height: 90.h / 2,
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+                child: FittedBox(
+                  child: Row(
+                    children: <Widget>[
+                      GenericCard(
+                        height: 350.h,
+                        width: 450.w,
+                        action: () {},
+                        text: "Add Orders",
+                      ),
+                      SizedBox(
+                        width: 90.w / 2,
+                      ),
+                      GenericCard(
+                        height: 350.h,
+                        width: 450.w,
+                        action: () {},
+                        text: "Add\nEmployees",
+                      ),
+                    ],
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Display(
-                      color: Colors.white,
-                      display: 3,
-                      text: "Orders",
-                      incrementSize: 5.w,
-                    ),
-                  ),
-                ],
-              )
+                ),
+              ),
+              SizedBox(
+                height: 90.h / 2,
+              ),
+              GenericCard(
+                height: 350.h,
+                width: 900.w,
+                action: () {},
+                text: "Analytics",
+              ),
             ],
           ),
         ));

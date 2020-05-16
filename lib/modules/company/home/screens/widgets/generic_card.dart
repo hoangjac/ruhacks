@@ -5,7 +5,11 @@ import 'package:ruhacks/theme/display1.dart';
 class GenericCard extends StatelessWidget {
   final Function action;
   final Color color;
-  const GenericCard({this.action, this.color});
+  final String text;
+  final double height;
+  final double width;
+  const GenericCard(
+      {this.action, this.color, this.text, this.height, this.width});
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -13,8 +17,8 @@ class GenericCard extends StatelessWidget {
       child: Stack(
         children: <Widget>[
           Container(
-            height: 350.h,
-            width: 900.w,
+            height: height,
+            width: width,
             decoration: BoxDecoration(
               boxShadow: [
                 new BoxShadow(
@@ -25,7 +29,7 @@ class GenericCard extends StatelessWidget {
                     offset: new Offset(0.0, 1.0),
                     // blurRadius, the higher the number the more smeared look
                     blurRadius: 11.0,
-                    spreadRadius: 4.0)
+                    spreadRadius: 1.0)
               ],
               color: Theme.of(context).primaryColor,
               borderRadius: BorderRadius.circular(30.h),
@@ -36,7 +40,7 @@ class GenericCard extends StatelessWidget {
             child: Display(
               color: Colors.white,
               display: 3,
-              text: "Orders",
+              text: text,
               incrementSize: 5.w,
             ),
           ),
