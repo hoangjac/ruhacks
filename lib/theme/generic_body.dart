@@ -6,7 +6,7 @@ class GenericBody extends StatelessWidget {
   final String title;
   final Color titleBackgroundColor;
   const GenericBody({this.title, this.titleBackgroundColor});
-
+  
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -30,7 +30,23 @@ class GenericBody extends StatelessWidget {
         ),
         Positioned(
             top: 75.h,
-            left: MediaQuery.of(context).size.width / 4.8,
+            left: 0,
+            child: Align(
+              alignment: Alignment.bottomCenter,
+              child: Padding(
+                  padding: EdgeInsets.fromLTRB(80.h, 40.h, 10.h, 40.h),
+                  child: IconButton(
+                    icon: Icon(
+                      Icons.arrow_back_ios,
+                      color: Colors.white,
+                      size: 40.w,
+                    ),
+                    onPressed: ,
+                  )),
+            )),
+        Positioned(
+            top: 75.h,
+            left: MediaQuery.of(context).size.width / 3.7,
             child: Align(
               alignment: Alignment.bottomCenter,
               child: Padding(

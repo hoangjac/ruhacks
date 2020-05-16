@@ -19,7 +19,7 @@ class GenericCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => action,
+      onTap: action,
       child: Stack(
         children: <Widget>[
           Container(

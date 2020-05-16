@@ -70,9 +70,6 @@ class Home extends StatelessWidget {
                 Row(
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
-                    SizedBox(
-                      width: 50.h,
-                    ),
                     Text(
                       "Joined us before?",
                       style: TextStyle(

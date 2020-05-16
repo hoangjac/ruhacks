@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ruhacks/modules/company/employee/screens/add_employees.dart';
 import 'package:ruhacks/modules/company/home/screens/company_home.dart';
+import 'package:ruhacks/modules/company/orders/screens/add_orders.dart';
 import 'package:ruhacks/theme/appTheme.dart';
 
 import 'modules/company/auth/screens/register.dart';
@@ -19,7 +20,8 @@ class Main extends StatelessWidget {
       routes: {
         Register.route: (context) => Register(),
         CompanyHome.route: (context) => CompanyHome(),
-        AddEmployees.route: (context) => AddEmployees()
+        AddEmployees.route: (context) => AddEmployees(),
+        AddOrders.route: (context) => AddOrders()
       },
     );
   }

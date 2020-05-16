@@ -233,12 +233,16 @@ class _RegisterState extends State<Register> {
                 SizedBox(
                   height: 90.h,
                 ),
-                GenericButton(
-                  height: 150.h,
-                  width: 450.w,
-                  text: "Add Employees",
-                  showPrimary: false,
-                  action: () {},
+                Padding(
+                  padding: EdgeInsets.fromLTRB(350.w, 0, 0, 0),
+                  child: GenericButton(
+                    height: 140.h,
+                    width: 450.w,
+                    text: "Create an Account",
+                    showPrimary: false,
+                    action: () =>
+                        Navigator.of(context).pushNamed(CompanyHome.route),
+                  ),
                 )
               ],
             ),

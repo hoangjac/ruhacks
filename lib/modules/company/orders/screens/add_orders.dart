@@ -6,16 +6,16 @@ import 'package:ruhacks/theme/generic_button.dart';
 import 'package:ruhacks/theme/materialField.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class AddEmployees extends StatefulWidget {
-  static String route = "/addEmployees";
+class AddOrders extends StatefulWidget {
+  static String route = "/AddOrders";
 
-  AddEmployees({Key key}) : super(key: key);
+  AddOrders({Key key}) : super(key: key);
 
   @override
-  _AddEmployeesState createState() => _AddEmployeesState();
+  _AddOrdersState createState() => _AddOrdersState();
 }
 
-class _AddEmployeesState extends State<AddEmployees> {
+class _AddOrdersState extends State<AddOrders> {
   @override
   Widget build(BuildContext context) {
     ScreenUtil.init(context);
@@ -24,7 +24,7 @@ class _AddEmployeesState extends State<AddEmployees> {
         body: Stack(
           children: <Widget>[
             GenericBody(
-              title: "Add Employees",
+              title: "Add Orders",
             ),
             Positioned(
               top: 80.h,
@@ -124,7 +124,7 @@ class _AddEmployeesState extends State<AddEmployees> {
                   child: GenericButton(
                     height: 140.h,
                     width: 600.w,
-                    text: "Add Employees",
+                    text: "Next",
                     showPrimary: false,
                     action: () {},
                   ),
