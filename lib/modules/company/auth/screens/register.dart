@@ -235,7 +235,9 @@ class _RegisterState extends State<Register> {
                     color: Color(0XFffF7D56),
                     padding:
                         EdgeInsets.symmetric(horizontal: 10.h, vertical: 50.h),
-                    action: () {},
+                    action: () {
+                    Navigator.of(context).pushNamed(routeName)
+                    },
                   ),
                 ),
               ],
