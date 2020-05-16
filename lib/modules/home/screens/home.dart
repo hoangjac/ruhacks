@@ -60,10 +60,11 @@ class Home extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 GenericButton(
+                  height: 150.h,
+                  width: 450.w,
                   text: "Sign up",
-                  color: Color(0xff707CFF),
-                  isBold: true,
-                  action: () => Navigator.pushNamed(context, Register.route),
+                  showPrimary: true,
+                  action: () {},
                 ),
                 Row(
                   mainAxisSize: MainAxisSize.min,

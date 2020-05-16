@@ -233,20 +233,13 @@ class _RegisterState extends State<Register> {
                 SizedBox(
                   height: 90.h,
                 ),
-                Padding(
-                  padding: EdgeInsets.fromLTRB(
-                      MediaQuery.of(context).size.width / 4, 40.h, 40.w, 40.h),
-                  child: GenericButton(
-                    text: "Create account",
-                    isBold: true,
-                    color: Color(0XFffF7D56),
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 10.h, vertical: 50.h),
-                    action: () {
-                      Navigator.of(context).pushNamed(CompanyHome.route);
-                    },
-                  ),
-                ),
+                GenericButton(
+                  height: 150.h,
+                  width: 450.w,
+                  text: "Add Employees",
+                  showPrimary: false,
+                  action: () {},
+                )
               ],
             ),
           )),
