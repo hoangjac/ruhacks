@@ -112,7 +112,7 @@ class AddEmployees extends StatelessWidget {
             Align(
               alignment: Alignment.bottomCenter,
               child: Padding(
-                padding: EdgeInsets.fromLTRB(0, 0, 0, 250.h),
+                padding: EdgeInsets.fromLTRB(0, 0, 0, 350.h),
                 child: Container(
                   child: GenericButton(
                     height: 140.h,

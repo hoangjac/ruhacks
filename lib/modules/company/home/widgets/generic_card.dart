@@ -8,8 +8,14 @@ class GenericCard extends StatelessWidget {
   final String text;
   final double height;
   final double width;
+  final bool showPrimary;
   const GenericCard(
-      {this.action, this.color, this.text, this.height, this.width});
+      {this.action,
+      this.color,
+      this.text,
+      this.height,
+      this.width,
+      this.showPrimary});
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -20,6 +26,11 @@ class GenericCard extends StatelessWidget {
             height: height,
             width: width,
             decoration: BoxDecoration(
+              gradient: showPrimary == false
+                  ? LinearGradient(
+                      colors: <Color>[Color(0xFFFF7D56), Color(0xFFFF997A)])
+                  : LinearGradient(
+                      colors: <Color>[Color(0xFF4C5AE8), Color(0xFF707CFF)]),
               boxShadow: [
                 new BoxShadow(
                     color: color == null
@@ -31,7 +42,6 @@ class GenericCard extends StatelessWidget {
                     blurRadius: 11.0,
                     spreadRadius: 1.0)
               ],
-              color: Theme.of(context).primaryColor,
               borderRadius: BorderRadius.circular(30.h),
             ),
           ),

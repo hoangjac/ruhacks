@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ruhacks/modules/company/auth/screens/register.dart';
+import 'package:ruhacks/modules/company/home/screens/company_home.dart';
 import 'package:ruhacks/theme/generic_button.dart';
 
 class Home extends StatelessWidget {
@@ -60,15 +61,18 @@ class Home extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 GenericButton(
-                  height: 150.h,
-                  width: 450.w,
+                  height: 140.h,
+                  width: 600.w,
                   text: "Sign up",
                   showPrimary: true,
-                  action: () {},
+                  action: () => Navigator.pushNamed(context, CompanyHome.route),
                 ),
                 Row(
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
+                    SizedBox(
+                      width: 50.h,
+                    ),
                     Text(
                       "Joined us before?",
                       style: TextStyle(

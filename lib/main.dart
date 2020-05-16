@@ -13,7 +13,7 @@ class Main extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: AddEmployees(),
+      home: Home(),
       debugShowCheckedModeBanner: false,
       theme: AppTheme.themeData,
       routes: {
