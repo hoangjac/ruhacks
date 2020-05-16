@@ -85,71 +85,125 @@ class _AddOrdersState extends State<AddOrders> {
                       SizedBox(
                         height: 25.h,
                       ),
-                      Container(
-                        height: ,
-                        width: MediaQuery.of(context).size.width,
-                        child: ListView.builder(
-                            itemCount: 2,
-                            itemBuilder: (BuildContext context, int i) {
-                              return Padding(
-                                  padding: const EdgeInsets.all(10),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: <Widget>[
-                                      Column(
-                                        children: <Widget>[
-                                          SizedBox(
-                                            height: 40.h,
-                                          ),
-                                          Image.asset(
-                                            "images/circle.png",
-                                            height: 90.h,
-                                            width: 120.w,
-                                          ),
-                                          Image.asset(
-                                            "images/solid.png",
-                                            height: 140.h,
-                                          )
-                                        ],
-                                      ),
-                                      Container(
-                                        width: 700.w,
-                                        child: MaterialField(
-                                          child: TextFormField(
-                                            style: TextStyle(
-                                              color: Colors.black,
-                                              fontFamily: 'OpenSans',
-                                            ),
-                                            decoration: InputDecoration(
-                                              border: OutlineInputBorder(
-                                                  borderRadius:
-                                                      BorderRadius.all(
-                                                          Radius.circular(10)),
-                                                  borderSide: BorderSide(
-                                                    width: 1,
-                                                  )),
-                                            ),
-                                            keyboardType: TextInputType.text,
-                                            showCursor: true,
-                                            validator: (value) {
-                                              if (value.isEmpty) {
-                                                return 'Please provide an industry';
-                                              }
-                                              return null;
-                                            },
-                                            onSaved: (value) {},
-
-                                            // child: Text("This is where your content goes")
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ));
-                            }),
-                      )
                     ],
                   ),
                 ),
+              ),
+            ),
+            Positioned(
+              top: MediaQuery.of(context).size.height / 3.9,
+              child: Padding(
+                padding: EdgeInsets.fromLTRB(70.w, 20.h, 80.w, 100.h),
+                child: Container(
+                  height: MediaQuery.of(context).size.height,
+                  width: MediaQuery.of(context).size.width,
+                  child: ListView.builder(
+                      itemCount: 2,
+                      itemBuilder: (BuildContext context, int i) {
+                        return Padding(
+                            padding: const EdgeInsets.all(0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: <Widget>[
+                                Column(
+                                  children: <Widget>[
+                                    Image.asset(
+                                      "images/circle.png",
+                                      height: 90.h,
+                                      width: 120.w,
+                                    ),
+                                    Image.asset(
+                                      "images/solid.png",
+                                      height: 200.h,
+                                    )
+                                  ],
+                                ),
+                                SizedBox(
+                                  width: 30.w,
+                                ),
+                              ],
+                            ));
+                      }),
+                ),
+              ),
+            ),
+            Positioned(
+              top: MediaQuery.of(context).size.height / 4.2,
+              left: 000.w,
+              child: Padding(
+                padding: EdgeInsets.fromLTRB(40.w, 20.h, 80.w, 100.h),
+                child: Container(
+                  height: MediaQuery.of(context).size.height,
+                  width: MediaQuery.of(context).size.width,
+                  child: ListView.builder(
+                      itemCount: 2,
+                      itemBuilder: (BuildContext context, int i) {
+                        return Padding(
+                            padding: const EdgeInsets.all(10),
+                            child: Column(
+                              children: <Widget>[
+                                Container(
+                                  width: 700.w,
+                                  child: MaterialField(
+                                    child: TextFormField(
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontFamily: 'OpenSans',
+                                      ),
+                                      decoration: InputDecoration(
+                                        border: OutlineInputBorder(
+                                            borderRadius: BorderRadius.all(
+                                                Radius.circular(10)),
+                                            borderSide: BorderSide(
+                                              width: 1,
+                                            )),
+                                      ),
+                                      keyboardType: TextInputType.text,
+                                      showCursor: true,
+                                      validator: (value) {
+                                        if (value.isEmpty) {
+                                          return 'Please provide an industry';
+                                        }
+                                        return null;
+                                      },
+                                      onSaved: (value) {},
+
+                                      // child: Text("This is where your content goes")
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 100.h,
+                                )
+                              ],
+                            ));
+                      }),
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.fromLTRB(0, 0, 0, 250.h),
+              child: Align(
+                alignment: Alignment.bottomCenter,
+                child: Padding(
+                    padding: EdgeInsets.fromLTRB(0, 0, 50.w, 350.h),
+                    child: RaisedButton(
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(18.0),
+                          side: BorderSide(color: Colors.white)),
+                      color: Colors.white,
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: <Widget>[
+                          Text("Add more steps"),
+                          Icon(
+                            Icons.add,
+                            color: Colors.black,
+                          )
+                        ],
+                      ),
+                      onPressed: () {},
+                    )),
               ),
             ),
             Align(
