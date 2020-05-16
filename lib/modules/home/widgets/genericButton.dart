@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class GenericButton extends StatelessWidget {
   final String text;
-  final Padding padding;
+  final EdgeInsetsGeometry padding;
   final bool isBold;
   final Color color;
   final Function action;
