@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:ruhacks/modules/auth/screens/register.dart';
+import 'package:ruhacks/modules/home/widgets/genericButton.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -52,38 +54,38 @@ class Home extends StatelessWidget {
               ],
             )),
         Positioned(
-            top: 1000.h,
+            top: 1150.h,
+            left: MediaQuery.of(context).size.width / 4,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
-                ButtonTheme(
-                  minWidth: 100.w,
-                  height: 100.h,
-                  child: RaisedButton(
-                    color: Color(0xFF4C5AE8),
-                    onPressed: () {},
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20)),
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: 150.w, vertical: 45.h),
-                      child: Text(
-                        "Sign up",
-                        style: TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.bold),
+                GenericButton(
+                  text: "Sign up",
+                  color: Color(0xff707CFF),
+                  isBold: true,
+                  action: () => Navigator.pushNamed(context, Register.route),
+                ),
+                Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    Text(
+                      "Joined us before?",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 30.h,
                       ),
                     ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.fromLTRB(80.h, 40.h, 10.h, 40.h),
-                  child: Text(
-                    "Start letting your\ncustomers know what \nyou’re doing with Trackio",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 65.h,
-                        fontWeight: FontWeight.bold),
-                  ),
+                    FlatButton(
+                      child: Text(
+                        "Log in",
+                        style: TextStyle(
+                          decoration: TextDecoration.underline,
+                          fontSize: 30.h,
+                        ),
+                      ),
+                      onPressed: () {},
+                    )
+                  ],
                 )
               ],
             )),
