@@ -10,6 +10,7 @@ import 'package:ruhacks/modules/company/employee/screens/employee_login.dart';
 import 'package:ruhacks/modules/company/employee/screens/employee_home.dart';
 import 'package:ruhacks/modules/company/employee/screens/employee_orders.dart';
 
+import 'modules/home/screens/home.dart';
 import 'modules/company/auth/screens/register.dart';
 
 void main() => runApp(Main());
@@ -22,7 +23,7 @@ class Main extends StatelessWidget {
           ChangeNotifierProvider.value(value: RegisterBloc()),
         ],
         child: MaterialApp(
-          home: Orders(),
+          home: EmployeeHome(),
           debugShowCheckedModeBanner: false,
           theme: AppTheme.themeData,
           routes: {
