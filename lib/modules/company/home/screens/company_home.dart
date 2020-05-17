@@ -68,7 +68,7 @@ class CompanyHome extends StatelessWidget {
               text: "Orders",
               image: "images/orders.png",
               imgHeight: 350.h,
-              imgWidth: 400.w,
+              imgWidth: 900.w,
               x_align: 26.0,
               y_align: 0.0,
             ),
@@ -84,7 +84,7 @@ class CompanyHome extends StatelessWidget {
                       height: 350.h,
                       width: 425.w,
                       action: () =>
-                          Navigator.pushNamed(context, AddOrders.route),
+                          Navigator.pushNamed(context, Orders.route),
                       text: "Add Orders",
                       image: "images/addorders.png",
                       imgHeight: 350.h,

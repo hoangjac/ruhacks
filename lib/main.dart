@@ -23,7 +23,7 @@ class Main extends StatelessWidget {
           ChangeNotifierProvider.value(value: RegisterBloc()),
         ],
         child: MaterialApp(
-          home: EmployeeHome(),
+          home: Home(),
           debugShowCheckedModeBanner: false,
           theme: AppTheme.themeData,
           routes: {

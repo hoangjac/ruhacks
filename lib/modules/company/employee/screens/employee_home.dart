@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ruhacks/modules/company/employee/screens/add_employees.dart';
+import 'package:ruhacks/modules/company/employee/screens/employee_orders.dart';
 import 'package:ruhacks/modules/company/employee/widgets/generic_card.dart';
 import 'package:ruhacks/modules/company/orders/screens/add_orders.dart';
 import 'package:ruhacks/theme/display.dart';
@@ -62,9 +63,9 @@ class EmployeeHome extends StatelessWidget {
               height: 90.h,
             ),
             GenericCard(
-               height: 350.h,
+              height: 350.h,
               width: 900.w,
-              action: () {},
+              action: () => Navigator.pushNamed(context, EmployeeOrders.route),
               text: "Orders",
               image: "images/orders.png",
               imgHeight: 350.h,
@@ -123,6 +124,7 @@ class EmployeeHome extends StatelessWidget {
           BottomNavigationBarItem(
             icon: Icon(Icons.person_outline),
             title: Text('Profile'),
+            
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),
