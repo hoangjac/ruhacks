@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:ruhacks/modules/company/auth/bloc/register_bloc.dart';
 import 'package:ruhacks/modules/company/employee/screens/add_employees.dart';
@@ -12,7 +11,6 @@ import 'package:ruhacks/modules/company/employee/screens/employee_home.dart';
 import 'package:ruhacks/modules/company/employee/screens/employee_orders.dart';
 
 import 'modules/company/auth/screens/register.dart';
-import 'modules/home/screens/home.dart';
 
 void main() => runApp(Main());
 
@@ -24,7 +22,7 @@ class Main extends StatelessWidget {
           ChangeNotifierProvider.value(value: RegisterBloc()),
         ],
         child: MaterialApp(
-          home: Home(),
+          home: Orders(),
           debugShowCheckedModeBanner: false,
           theme: AppTheme.themeData,
           routes: {
