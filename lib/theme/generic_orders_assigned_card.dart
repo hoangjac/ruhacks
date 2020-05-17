@@ -2,29 +2,25 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ruhacks/theme/display.dart';
 
-class GenericOrdersCard extends StatelessWidget {
+class GenericOrdersAssignedCard extends StatelessWidget {
   final Color color;
   @required
   final String text;
   @required
   final String serviceName;
-  @required
-  final bool showAssign;
-  final Function actionAssign;
+
   @required
   final bool isUrgent;
 
   final double height;
   final double width;
-  const GenericOrdersCard({
+  const GenericOrdersAssignedCard({
     this.color,
     this.text,
     this.height,
     this.width,
     this.serviceName,
-    this.showAssign,
     this.isUrgent,
-    this.actionAssign,
   });
   @override
   Widget build(BuildContext context) {
@@ -103,32 +99,34 @@ class GenericOrdersCard extends StatelessWidget {
                 SizedBox(
                   height: 0,
                 ),
-                showAssign == true
-                    ? GestureDetector(
-                        onTap: actionAssign,
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 50.w,
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: <Widget>[
-                              Display(
-                                color: Theme.of(context).primaryColor,
-                                display: 3,
-                                text: "Assign",
-                                incrementSize: 0.w,
-                              ),
-                              Icon(
-                                Icons.arrow_forward_ios,
-                                size: 40.w,
-                                color: Theme.of(context).primaryColor,
-                              ),
-                            ],
-                          ),
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 50.w,
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Align(
+                        alignment: Alignment.bottomLeft,
+                        child: Display(
+                          color: Colors.black,
+                          display: 3,
+                          text: "ASSIGNED TO",
+                          incrementSize: -7.w,
                         ),
-                      )
-                    : Container(),
+                      ),
+                      Align(
+                        alignment: Alignment.bottomLeft,
+                        child: Display(
+                          color: Color(0xFFC5CEF3),
+                          display: 3,
+                          text: "Employee Name",
+                          incrementSize: -7.w,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ],
             )),
       ],
