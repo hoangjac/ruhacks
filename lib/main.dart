@@ -5,6 +5,7 @@ import 'package:ruhacks/modules/company/employee/bloc/company_employee_bloc.dart
 import 'package:ruhacks/modules/company/employee/screens/add_employees.dart';
 import 'package:ruhacks/modules/company/home/screens/company_home.dart';
 import 'package:ruhacks/modules/company/orders/screens/add_orders.dart';
+import 'package:ruhacks/modules/company/orders/screens/bloc/order_bloc.dart';
 import 'package:ruhacks/modules/company/orders/screens/orders.dart';
 import 'package:ruhacks/theme/appTheme.dart';
 import 'package:ruhacks/modules/company/employee/screens/employee_login.dart';
@@ -23,6 +24,7 @@ class Main extends StatelessWidget {
         providers: [
           ChangeNotifierProvider.value(value: RegisterBloc()),
           ChangeNotifierProvider.value(value: CompanyEmployeeBloc()),
+          ChangeNotifierProvider.value(value: OrderBloc()),
         ],
         child: MaterialApp(
           home: Home(),

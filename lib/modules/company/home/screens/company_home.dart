@@ -1,14 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ruhacks/modules/company/employee/screens/add_employees.dart';
+import 'package:ruhacks/modules/company/employee/screens/employee_home.dart';
 import 'package:ruhacks/modules/company/home/widgets/generic_card.dart';
 import 'package:ruhacks/modules/company/orders/screens/add_orders.dart';
 import 'package:ruhacks/modules/company/orders/screens/orders.dart';
 import 'package:ruhacks/theme/display.dart';
 
-class CompanyHome extends StatelessWidget {
+class CompanyHome extends StatefulWidget {
   static String route = "/companyPortal";
 
+  CompanyHome({Key key}) : super(key: key);
+
+  @override
+  _CompanyHomeState createState() => _CompanyHomeState();
+}
+
+class _CompanyHomeState extends State<CompanyHome> {
   @override
   Widget build(BuildContext context) {
     ScreenUtil.init(context);
@@ -84,7 +92,7 @@ class CompanyHome extends StatelessWidget {
                       height: 350.h,
                       width: 425.w,
                       action: () =>
-                          Navigator.pushNamed(context, Orders.route),
+                          Navigator.pushNamed(context, AddOrders.route),
                       text: "Add Orders",
                       image: "images/addorders.png",
                       imgHeight: 350.h,
@@ -129,6 +137,13 @@ class CompanyHome extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        onTap: (index) {
+          print(index);
+          if (index == 1) {
+            Navigator.of(context).pushNamed(EmployeeHome.route);
+            setState(() {});
+          }
+        },
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),

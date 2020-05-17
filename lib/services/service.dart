@@ -62,7 +62,7 @@ class Service {
       String estComp) async {
     // set up POST request arguments
     String url =
-        "'https://us-central1-aiot-fit-xlab.cloudfunctions.net/servemequickaddworkflow";
+        "https://us-central1-aiot-fit-xlab.cloudfunctions.net/servemequickaddworkflow";
     String json =
         '{"name": "$name", "customerName": "$customerName", "employee_id": "$employee_id", "status": "$status", "isUrgent": "$isUrgent", "est_comp": "$estComp"  }';
     Map<String, String> headers = {"Content-type": "application/json"};
