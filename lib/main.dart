@@ -7,6 +7,9 @@ import 'package:ruhacks/modules/company/home/screens/company_home.dart';
 import 'package:ruhacks/modules/company/orders/screens/add_orders.dart';
 import 'package:ruhacks/modules/company/orders/screens/orders.dart';
 import 'package:ruhacks/theme/appTheme.dart';
+import 'package:ruhacks/modules/company/employee/screens/employee_login.dart';
+import 'package:ruhacks/modules/company/employee/screens/employee_home.dart';
+import 'package:ruhacks/modules/company/employee/screens/employee_orders.dart';
 
 import 'modules/company/auth/screens/register.dart';
 import 'modules/home/screens/home.dart';
@@ -29,7 +32,10 @@ class Main extends StatelessWidget {
             Orders.route: (context) => Orders(),
             CompanyHome.route: (context) => CompanyHome(),
             AddEmployees.route: (context) => AddEmployees(),
-            AddOrders.route: (context) => AddOrders()
+            AddOrders.route: (context) => AddOrders(),
+            EmployeeLogin.route: (context) => EmployeeLogin(),
+            EmployeeHome.route: (context) => EmployeeHome(),
+            EmployeeOrders.route: (context) => EmployeeOrders(),
           },
         ));
   }
