@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
+import 'package:ruhacks/modules/company/auth/bloc/register_bloc.dart';
 import 'package:ruhacks/modules/company/employee/screens/add_employees.dart';
 import 'package:ruhacks/modules/company/home/screens/company_home.dart';
 import 'package:ruhacks/modules/company/orders/screens/add_orders.dart';
@@ -19,7 +20,9 @@ class Main extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-        providers: [],
+        providers: [
+          ChangeNotifierProvider.value(value: RegisterBloc()),
+        ],
         child: MaterialApp(
           home: Home(),
           debugShowCheckedModeBanner: false,
