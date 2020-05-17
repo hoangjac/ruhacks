@@ -6,9 +6,18 @@ import 'package:ruhacks/modules/company/employee/widgets/generic_card.dart';
 import 'package:ruhacks/modules/company/orders/screens/add_orders.dart';
 import 'package:ruhacks/theme/display.dart';
 
-class EmployeeHome extends StatelessWidget {
+import '../../home/screens/company_home.dart';
+
+class EmployeeHome extends StatefulWidget {
   static String route = "/employeePortal";
 
+  EmployeeHome({Key key}) : super(key: key);
+
+  @override
+  _EmployeeHomeState createState() => _EmployeeHomeState();
+}
+
+class _EmployeeHomeState extends State<EmployeeHome> {
   @override
   Widget build(BuildContext context) {
     ScreenUtil.init(context);
@@ -116,6 +125,13 @@ class EmployeeHome extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        onTap: (index) {
+          print(index);
+          if (index == 0) {
+            Navigator.of(context).pushNamed(CompanyHome.route);
+            setState(() {});
+          }
+        },
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
@@ -124,7 +140,6 @@ class EmployeeHome extends StatelessWidget {
           BottomNavigationBarItem(
             icon: Icon(Icons.person_outline),
             title: Text('Profile'),
-            
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),
