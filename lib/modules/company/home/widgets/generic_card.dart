@@ -16,6 +16,7 @@ class GenericCard extends StatelessWidget {
   final double x_align;
   final double y_align;
 
+
   const GenericCard({
     this.action,
     this.color,
@@ -28,8 +29,8 @@ class GenericCard extends StatelessWidget {
     this.imgHeight,
     this.x_align,
     this.y_align,
+    
   });
-  
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -51,7 +52,7 @@ class GenericCard extends StatelessWidget {
                         ? Color(0xff4C5AE8).withOpacity(0.30)
                         : color,
                     // offset, the X,Y coordinates to offset the shadow
-                    offset: new Offset(7.0, 1.0),
+                    offset: new Offset(0.0, 1.0),
                     // blurRadius, the higher the number the more smeared look
                     blurRadius: 11.0,
                     spreadRadius: 1.0)
