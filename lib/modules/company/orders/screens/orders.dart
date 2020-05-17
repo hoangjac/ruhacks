@@ -31,7 +31,8 @@ class Orders extends StatelessWidget {
                             height: 250.h,
                             width: MediaQuery.of(context).size.width,
                             text: "Customer Name",
-                            action: () {},
+                            showAssign: true,
+                            isUrgent: true,
                           ),
                         );
                       }))),
