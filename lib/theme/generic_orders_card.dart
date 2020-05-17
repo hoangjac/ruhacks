@@ -65,7 +65,7 @@ class GenericOrdersCard extends StatelessWidget {
                       ),
                       isUrgent == true
                           ? Padding(
-                              padding: EdgeInsets.fromLTRB(320.w, 9, 0, 0),
+                              padding: EdgeInsets.fromLTRB(500.w, 9, 0, 0),
                               child: Align(
                                   alignment: Alignment.topRight,
                                   child: Row(
