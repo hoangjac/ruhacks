@@ -72,12 +72,7 @@ class _CompanyHomeState extends State<CompanyHome> {
             GenericCard(
               height: 350.h,
               width: 900.w,
-<<<<<<< HEAD
-              action: () => Navigator.of(context).pushNamed(Orders.route),
-=======
-               action: () =>
-                          Navigator.pushNamed(context, Orders.route),
->>>>>>> 6a62bff7694e0650e949fc32581ed129e9effde1
+              action: () => Navigator.pushNamed(context, Orders.route),
               text: "Orders",
               image: "images/orders.png",
               imgHeight: 350.h,
