@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:ruhacks/debug/helper/debug_helper.dart';
+import 'package:ruhacks/modules/company/auth/bloc/register_bloc.dart';
 import 'package:ruhacks/modules/company/auth/screens/register.dart';
+import 'package:ruhacks/modules/company/employee/bloc/company_employee_bloc.dart';
 import 'package:ruhacks/theme/display.dart';
 import 'package:ruhacks/theme/generic_body.dart';
 import 'package:ruhacks/theme/generic_button.dart';
@@ -16,6 +20,10 @@ class AddEmployees extends StatefulWidget {
 }
 
 class _AddEmployeesState extends State<AddEmployees> {
+  final GlobalKey<FormState> _formKey = GlobalKey();
+  TextEditingController _name = TextEditingController();
+  TextEditingController _email = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     ScreenUtil.init(context);
@@ -26,94 +34,99 @@ class _AddEmployeesState extends State<AddEmployees> {
             GenericBody(
               title: "Add Employees",
             ),
-            Positioned(
-              top: 80.h,
-              child: Container(
-                height: MediaQuery.of(context).size.height,
-                width: MediaQuery.of(context).size.width,
-                child: Padding(
-                  padding: EdgeInsets.fromLTRB(80.w, 20.h, 80.w, 100.h),
-                  child: ListView(
-                    physics: NeverScrollableScrollPhysics(),
-                    children: <Widget>[
-                      SizedBox(
-                        height: 60.h,
-                      ),
-                      Display(
-                        text: "NAME",
-                        color: Color(0xFF414C60),
-                        display: 4,
-                        isBold: true,
-                      ),
-                      SizedBox(
-                        height: 25.h,
-                      ),
-                      MaterialField(
-                        child: TextFormField(
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontFamily: 'OpenSans',
-                          ),
-                          decoration: InputDecoration(
-                            border: OutlineInputBorder(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(10)),
-                                borderSide: BorderSide(
-                                  width: 1,
-                                )),
-                          ),
-                          keyboardType: TextInputType.text,
-                          showCursor: true,
-                          validator: (value) {
-                            if (value.isEmpty) {
-                              return 'Please provide an industry';
-                            }
-                            return null;
-                          },
-                          onSaved: (value) {},
+            Form(
+              key: _formKey,
+              child: Positioned(
+                top: 80.h,
+                child: Container(
+                  height: MediaQuery.of(context).size.height,
+                  width: MediaQuery.of(context).size.width,
+                  child: Padding(
+                    padding: EdgeInsets.fromLTRB(80.w, 20.h, 80.w, 100.h),
+                    child: ListView(
+                      physics: NeverScrollableScrollPhysics(),
+                      children: <Widget>[
+                        SizedBox(
+                          height: 60.h,
+                        ),
+                        Display(
+                          text: "NAME",
+                          color: Color(0xFF414C60),
+                          display: 4,
+                          isBold: true,
+                        ),
+                        SizedBox(
+                          height: 25.h,
+                        ),
+                        MaterialField(
+                          child: TextFormField(
+                            controller: _name,
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontFamily: 'OpenSans',
+                            ),
+                            decoration: InputDecoration(
+                              border: OutlineInputBorder(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(10)),
+                                  borderSide: BorderSide(
+                                    width: 1,
+                                  )),
+                            ),
+                            keyboardType: TextInputType.text,
+                            showCursor: true,
+                            validator: (value) {
+                              if (value.isEmpty) {
+                                return 'Please provide a name';
+                              }
+                              return null;
+                            },
+                            onSaved: (value) {},
 
-                          // child: Text("This is where your content goes")
-                        ),
-                      ),
-                      SizedBox(
-                        height: 60.h,
-                      ),
-                      Display(
-                        text: "EMAIL",
-                        color: Color(0xFF414C60),
-                        display: 4,
-                        isBold: true,
-                      ),
-                      SizedBox(
-                        height: 25.h,
-                      ),
-                      MaterialField(
-                        child: TextFormField(
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontFamily: 'OpenSans',
+                            // child: Text("This is where your content goes")
                           ),
-                          decoration: InputDecoration(
-                            border: OutlineInputBorder(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(10)),
-                                borderSide: BorderSide(
-                                  width: 1,
-                                )),
-                          ),
-                          keyboardType: TextInputType.text,
-                          showCursor: true,
-                          validator: (value) {
-                            if (value.isEmpty) {
-                              return 'Please provide an industry';
-                            }
-                            return null;
-                          },
-                          onSaved: (value) {},
-                          // child: Text("This is where your content goes")
                         ),
-                      ),
-                    ],
+                        SizedBox(
+                          height: 60.h,
+                        ),
+                        Display(
+                          text: "EMAIL",
+                          color: Color(0xFF414C60),
+                          display: 4,
+                          isBold: true,
+                        ),
+                        SizedBox(
+                          height: 25.h,
+                        ),
+                        MaterialField(
+                          child: TextFormField(
+                            controller: _email,
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontFamily: 'OpenSans',
+                            ),
+                            decoration: InputDecoration(
+                              border: OutlineInputBorder(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(10)),
+                                  borderSide: BorderSide(
+                                    width: 1,
+                                  )),
+                            ),
+                            keyboardType: TextInputType.text,
+                            showCursor: true,
+                            validator: (value) {
+                              if (value.isEmpty) {
+                                return 'Please provide an email';
+                              }
+                              return null;
+                            },
+                            onSaved: (value) {},
+                            // child: Text("This is where your content goes")
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -128,7 +141,19 @@ class _AddEmployeesState extends State<AddEmployees> {
                     width: 600.w,
                     text: "Add Employees",
                     showPrimary: false,
-                    action: () {},
+                    action: () {
+                      RegisterBloc provider =
+                          Provider.of<RegisterBloc>(context, listen: false);
+                      CompanyEmployeeBloc provider2 =
+                          Provider.of<CompanyEmployeeBloc>(context,
+                              listen: false);
+
+                      provider2.setcompany_Id(provider.company_id);
+                      DebugHelper.green(
+                          "here" + provider.company_id.toString());
+                      provider2.createEmployeeUser(
+                          provider.company_id, _email.text, _name.text);
+                    },
                   ),
                 ),
               ),

@@ -59,12 +59,12 @@ class RegisterBloc extends ChangeNotifier {
     notifyListeners();
   }
 
-  void setId(String value) {
+  void setcompany_id(String value) {
     _companyId = value;
     notifyListeners();
   }
 
-  String get company_Id => _companyId;
+  String get company_id => _companyId;
 
   void createCompanyUser(
       {String company_name,
@@ -86,9 +86,14 @@ class RegisterBloc extends ChangeNotifier {
       setpassword(password);
 
       Map<String, dynamic> body = json.decode(value);
-      setId(body["company_id"]);
-      DebugHelper.green(
-          company_name + industry + address + city + email + password);
+      setcompany_id(body["company_id"]);
+      DebugHelper.green(company_name +
+          industry +
+          address +
+          city +
+          email +
+          password +
+          body["company_id"]);
     });
   }
 }

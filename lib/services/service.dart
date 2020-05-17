@@ -38,10 +38,9 @@ class Service {
     {
       // set up POST request arguments
       String url =
-          'https://us-central1-aiot-fit-xlab.cloudfunctions.net/servemequickadduser';
+          "https://us-central1-aiot-fit-xlab.cloudfunctions.net/servemequickaddemployee";
       String json =
-          '{"company_id": "test", "email": "test@me.com", "name": "test"}';
-
+          '{"company_id": "$company_id", "email": "$email", "name": "$name"   }';
       Map<String, String> headers = {"Content-type": "application/json"};
       // make POST request
       Response response = await post(url, headers: _postHeaders, body: json);
@@ -52,6 +51,28 @@ class Service {
 
       return response.body;
     }
+  }
+
+  static Future<String> createWorkFlow(
+      String name,
+      String customerName,
+      String employee_id,
+      String status,
+      String isUrgent,
+      String estComp) async {
+    // set up POST request arguments
+    String url =
+        "'https://us-central1-aiot-fit-xlab.cloudfunctions.net/servemequickaddworkflow";
+    String json =
+        '{"name": "$name", "customerName": "$customerName", "employee_id": "$employee_id", "status": "$status", "isUrgent": "$isUrgent", "est_comp": "$estComp"  }';
+    Map<String, String> headers = {"Content-type": "application/json"};
+    // make POST request
+    Response response = await post(url, headers: _postHeaders, body: json);
+    // check the status code for the result
+    int statusCode = response.statusCode;
+    // this API passes back the id of the new item added to the body
+    String body = response.body;
+    return response.body;
   }
 
 /*

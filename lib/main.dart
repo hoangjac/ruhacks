@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:ruhacks/modules/company/auth/bloc/register_bloc.dart';
+import 'package:ruhacks/modules/company/employee/bloc/company_employee_bloc.dart';
 import 'package:ruhacks/modules/company/employee/screens/add_employees.dart';
 import 'package:ruhacks/modules/company/home/screens/company_home.dart';
 import 'package:ruhacks/modules/company/orders/screens/add_orders.dart';
@@ -22,6 +23,7 @@ class Main extends StatelessWidget {
     return MultiProvider(
         providers: [
           ChangeNotifierProvider.value(value: RegisterBloc()),
+          ChangeNotifierProvider.value(value: CompanyEmployeeBloc()),
         ],
         child: MaterialApp(
           home: Home(),

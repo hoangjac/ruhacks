@@ -4,6 +4,7 @@ import 'package:http/http.dart';
 import 'package:provider/provider.dart';
 import 'package:ruhacks/debug/helper/debug_helper.dart';
 import 'package:ruhacks/modules/company/auth/bloc/register_bloc.dart';
+import 'package:ruhacks/modules/company/employee/bloc/company_employee_bloc.dart';
 import 'package:ruhacks/modules/company/home/screens/company_home.dart';
 import 'package:ruhacks/theme/display.dart';
 import 'package:ruhacks/theme/generic_button.dart';
@@ -37,6 +38,8 @@ class _RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
     RegisterBloc provider = Provider.of<RegisterBloc>(context, listen: false);
+    CompanyEmployeeBloc provider2 =
+        Provider.of<CompanyEmployeeBloc>(context, listen: false);
 
     ScreenUtil.init(context);
     return Scaffold(
@@ -281,6 +284,7 @@ class _RegisterState extends State<Register> {
                               email: _emailAddress.text,
                               industry: _industry.text,
                               password: _password.text);
+
                           Navigator.of(context).pushNamed(CompanyHome.route);
                         }),
                   )
