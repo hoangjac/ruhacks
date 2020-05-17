@@ -23,7 +23,51 @@ class Service {
       Map<String, String> headers = {"Content-type": "application/json"};
 
       // make POST request
-      Response response = await post(url, headers: headers, body: json);
+      Response response = await post(url, headers: _postHeaders, body: json);
+      // check the status code for the result
+      int statusCode = response.statusCode;
+      // this API passes back the id of the new item added to the body
+      String body = response.body;
+
+      return response.body;
+    }
+  }
+
+  static Future<String> createEmployeeUser(
+      String company_id, String email, String name) async {
+    {
+      // set up POST request arguments
+      String url =
+          'https://us-central1-aiot-fit-xlab.cloudfunctions.net/servemequickadduser';
+      String json =
+          '{"company_id": "test", "email": "test@me.com", "name": "test"}';
+
+      Map<String, String> headers = {"Content-type": "application/json"};
+      // make POST request
+      Response response = await post(url, headers: _postHeaders, body: json);
+      // check the status code for the result
+      int statusCode = response.statusCode;
+      // this API passes back the id of the new item added to the body
+      String body = response.body;
+
+      return response.body;
+    }
+  }
+
+/*
+  static Future<String> createWorkFlow() async {
+    {
+      // set up POST request arguments
+      String url =
+          'https://us-central1-aiot-fit-xlab.cloudfunctions.net/servemequickaddworkflow';
+      
+      
+      String json =
+          '{"company_name": "$company_name", "industry": "$industry text", "address": "$address", "city": "$city", "email":"$email", "password":"$password"}';
+      Map<String, String> headers = {"Content-type": "application/json"};
+
+      // make POST request
+      Response response = await post(url, headers: _postHeaders, body: json);
       // check the status code for the result
       int statusCode = response.statusCode;
       // this API passes back the id of the new item added to the body
@@ -31,6 +75,7 @@ class Service {
       return response.body;
     }
   }
+  */
   /*
 
 //API Returns Type Futre Map because json is a key-value pair that may come in the future
