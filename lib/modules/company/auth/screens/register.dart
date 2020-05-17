@@ -52,6 +52,7 @@ class _RegisterState extends State<Register> {
                   text: "COMPANY NAME",
                   color: Color(0xFF414C60),
                   display: 4,
+                  isBold: true,
                 ),
                 SizedBox(
                   height: 25.h,
@@ -89,6 +90,7 @@ class _RegisterState extends State<Register> {
                   text: "INDUSTRY",
                   color: Color(0xFF414C60),
                   display: 4,
+                  isBold: true,
                 ),
                 SizedBox(
                   height: 25.h,
@@ -126,6 +128,7 @@ class _RegisterState extends State<Register> {
                   text: "COMPANY ADDRESS",
                   color: Color(0xFF414C60),
                   display: 4,
+                  isBold: true,
                 ),
                 SizedBox(
                   height: 25.h,
@@ -163,6 +166,7 @@ class _RegisterState extends State<Register> {
                   text: "EMAIL ADDRESS",
                   color: Color(0xFF414C60),
                   display: 4,
+                  isBold: true,
                 ),
                 SizedBox(
                   height: 25.h,
@@ -200,6 +204,7 @@ class _RegisterState extends State<Register> {
                   text: "PASSWORD",
                   color: Color(0xFF414C60),
                   display: 4,
+                  isBold: true,
                 ),
                 SizedBox(
                   height: 25.h,

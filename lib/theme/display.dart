@@ -30,7 +30,7 @@ class Display extends StatelessWidget {
         return Text(text,
             style: TextStyle(
               fontSize: 55.w + incrementSize,
-              fontWeight: isBold == null ? FontWeight.w400 : FontWeight.bold,
+              fontWeight: isBold == null ? FontWeight.w500 : FontWeight.bold,
               color: color == null ? Colors.black : color,
             ));
         break;
@@ -39,7 +39,7 @@ class Display extends StatelessWidget {
         return Text(text,
             style: TextStyle(
                 fontSize: 40.w + incrementSize,
-                fontWeight: isBold == null ? FontWeight.w400 : FontWeight.bold,
+                fontWeight: isBold == null ? FontWeight.w500 : FontWeight.bold,
                 color: color == null ? Colors.black : color));
         break;
 
@@ -47,7 +47,7 @@ class Display extends StatelessWidget {
         return Text(text,
             style: TextStyle(
                 fontSize: 30.w + incrementSize,
-                fontWeight: FontWeight.bold,
+                fontWeight: isBold == null ? FontWeight.w500 : FontWeight.bold,
                 letterSpacing: 2.w,
                 color: color == null ? Colors.black : color));
         break;

@@ -43,6 +43,7 @@ class _AddEmployeesState extends State<AddEmployees> {
                         text: "NAME",
                         color: Color(0xFF414C60),
                         display: 4,
+                        isBold: true,
                       ),
                       SizedBox(
                         height: 25.h,
@@ -81,6 +82,7 @@ class _AddEmployeesState extends State<AddEmployees> {
                         text: "EMAIL",
                         color: Color(0xFF414C60),
                         display: 4,
+                        isBold: true,
                       ),
                       SizedBox(
                         height: 25.h,

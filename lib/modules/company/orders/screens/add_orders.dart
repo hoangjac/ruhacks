@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:ruhacks/debug/helper/debug_helper.dart';
 import 'package:ruhacks/modules/company/auth/screens/register.dart';
+import 'package:ruhacks/modules/company/orders/screens/orders.dart';
 import 'package:ruhacks/theme/display.dart';
 import 'package:ruhacks/theme/generic_body.dart';
-import 'package:ruhacks/theme/generic_button.dart';
 import 'package:ruhacks/theme/materialField.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -43,6 +44,7 @@ class _AddOrdersState extends State<AddOrders> {
                         text: "ORDER NAME",
                         color: Color(0xFF414C60),
                         display: 4,
+                        isBold: true,
                       ),
                       SizedBox(
                         height: 25.h,
@@ -81,6 +83,7 @@ class _AddOrdersState extends State<AddOrders> {
                         text: "STEPS\n(2-10)",
                         color: Color(0xFF414C60),
                         display: 4,
+                        isBold: true,
                       ),
                       SizedBox(
                         height: 25.h,
@@ -91,19 +94,23 @@ class _AddOrdersState extends State<AddOrders> {
               ),
             ),
             Positioned(
-              top: MediaQuery.of(context).size.height / 3.9,
+              top: MediaQuery.of(context).size.height / 4.2,
+              left: 000.w,
               child: Padding(
-                padding: EdgeInsets.fromLTRB(70.w, 20.h, 80.w, 100.h),
+                padding: EdgeInsets.fromLTRB(40.w, 20.h, 100.w, 100.h),
                 child: Container(
-                  height: MediaQuery.of(context).size.height,
+                  height: MediaQuery.of(context).size.height / 2.7,
                   width: MediaQuery.of(context).size.width,
                   child: ListView.builder(
-                      itemCount: 2,
+                      itemCount: 3,
                       itemBuilder: (BuildContext context, int i) {
+                        String asset = "images/solid.png";
+                        if (i == 2) {
+                          asset = "images/dotted.png";
+                        }
                         return Padding(
-                            padding: const EdgeInsets.all(0),
+                            padding: const EdgeInsets.all(10),
                             child: Row(
-                              mainAxisSize: MainAxisSize.min,
                               children: <Widget>[
                                 Column(
                                   children: <Widget>[
@@ -113,7 +120,7 @@ class _AddOrdersState extends State<AddOrders> {
                                       width: 120.w,
                                     ),
                                     Image.asset(
-                                      "images/solid.png",
+                                      asset,
                                       height: 200.h,
                                     )
                                   ],
@@ -121,59 +128,42 @@ class _AddOrdersState extends State<AddOrders> {
                                 SizedBox(
                                   width: 30.w,
                                 ),
-                              ],
-                            ));
-                      }),
-                ),
-              ),
-            ),
-            Positioned(
-              top: MediaQuery.of(context).size.height / 4.2,
-              left: 000.w,
-              child: Padding(
-                padding: EdgeInsets.fromLTRB(40.w, 20.h, 80.w, 100.h),
-                child: Container(
-                  height: MediaQuery.of(context).size.height,
-                  width: MediaQuery.of(context).size.width,
-                  child: ListView.builder(
-                      itemCount: 2,
-                      itemBuilder: (BuildContext context, int i) {
-                        return Padding(
-                            padding: const EdgeInsets.all(10),
-                            child: Column(
-                              children: <Widget>[
-                                Container(
-                                  width: 700.w,
-                                  child: MaterialField(
-                                    child: TextFormField(
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontFamily: 'OpenSans',
-                                      ),
-                                      decoration: InputDecoration(
-                                        border: OutlineInputBorder(
-                                            borderRadius: BorderRadius.all(
-                                                Radius.circular(10)),
-                                            borderSide: BorderSide(
-                                              width: 1,
-                                            )),
-                                      ),
-                                      keyboardType: TextInputType.text,
-                                      showCursor: true,
-                                      validator: (value) {
-                                        if (value.isEmpty) {
-                                          return 'Please provide an industry';
-                                        }
-                                        return null;
-                                      },
-                                      onSaved: (value) {},
+                                Column(
+                                  children: <Widget>[
+                                    Container(
+                                      width: 790.w,
+                                      child: MaterialField(
+                                        child: TextFormField(
+                                          style: TextStyle(
+                                            color: Colors.black,
+                                            fontFamily: 'OpenSans',
+                                          ),
+                                          decoration: InputDecoration(
+                                            border: OutlineInputBorder(
+                                                borderRadius: BorderRadius.all(
+                                                    Radius.circular(10)),
+                                                borderSide: BorderSide(
+                                                  width: 1,
+                                                )),
+                                          ),
+                                          keyboardType: TextInputType.text,
+                                          showCursor: true,
+                                          validator: (value) {
+                                            if (value.isEmpty) {
+                                              return 'Please provide an industry';
+                                            }
+                                            return null;
+                                          },
+                                          onSaved: (value) {},
 
-                                      // child: Text("This is where your content goes")
+                                          // child: Text("This is where your content goes")
+                                        ),
+                                      ),
                                     ),
-                                  ),
-                                ),
-                                SizedBox(
-                                  height: 100.h,
+                                    SizedBox(
+                                      height: 100.h,
+                                    )
+                                  ],
                                 )
                               ],
                             ));
@@ -230,7 +220,7 @@ class _AddOrdersState extends State<AddOrders> {
                       color: Colors.transparent,
                       child: InkWell(
                           onTap: () =>
-                              Navigator.pushNamed(context, Register.route),
+                              Navigator.pushNamed(context, Orders.route),
                           child: Padding(
                             padding: const EdgeInsets.all(10.0),
                             child: Center(
