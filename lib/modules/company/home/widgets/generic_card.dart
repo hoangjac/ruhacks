@@ -48,7 +48,7 @@ class GenericCard extends StatelessWidget {
               borderRadius: BorderRadius.circular(30.h),
             ),
           ),
-          Image.asset("images/addemployee.png"),
+          // Image.asset(image),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Display(

@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ruhacks/modules/company/employee/screens/add_employees.dart';
 import 'package:ruhacks/modules/company/home/widgets/generic_card.dart';
 import 'package:ruhacks/modules/company/orders/screens/add_orders.dart';
+import 'package:ruhacks/modules/company/orders/screens/orders.dart';
 import 'package:ruhacks/theme/display.dart';
 
 class CompanyHome extends StatelessWidget {
@@ -63,7 +64,7 @@ class CompanyHome extends StatelessWidget {
               GenericCard(
                 height: 350.h,
                 width: 900.w,
-                action: () {},
+                action: () => Navigator.of(context).pushNamed(Orders.route),
                 text: "Orders",
               ),
               SizedBox(

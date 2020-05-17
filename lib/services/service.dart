@@ -3,20 +3,17 @@ import 'package:http/http.dart' as http;
 import 'package:http/http.dart';
 
 class Service {
-  static final String _url =
-      'https://us-central1-aiot-fit-xlab.cloudfunctions.net/servemequickadduser';
-  static final Map<String, String> _headers = {
+  static final Map<String, String> _postHeaders = {
     "Content-Type": "application/json",
     'cache-control': 'no-cache',
   };
+  static final Map<String, String> _getHeaders = {
+    "Content-Type": "plain/text",
+    'cache-control': 'no-cache',
+  };
 
-  static Future<http.Response> createCompanyUser(
-      String company_name,
-      String industry,
-      String address,
-      String city,
-      String email,
-      String password) async {
+  static Future<String> createCompanyUser(String company_name, String industry,
+      String address, String city, String email, String password) async {
     {
       // set up POST request arguments
       String url =
@@ -31,7 +28,7 @@ class Service {
       int statusCode = response.statusCode;
       // this API passes back the id of the new item added to the body
       String body = response.body;
-      print(response.body);
+      return response.body;
     }
   }
   /*

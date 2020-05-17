@@ -1,9 +1,10 @@
+import 'dart:convert';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:ruhacks/debug/helper/debug_helper.dart';
-import 'package:ruhacks/services/register_service.dart';
+import 'package:ruhacks/services/service.dart';
 
 class RegisterBloc extends ChangeNotifier {
   String _company_name;
@@ -12,6 +13,7 @@ class RegisterBloc extends ChangeNotifier {
   String _city;
   String _email;
   String _password;
+  String _companyId;
 
   String get company_name => _company_name;
 
@@ -57,6 +59,13 @@ class RegisterBloc extends ChangeNotifier {
     notifyListeners();
   }
 
+  void setId(String value) {
+    _companyId = value;
+    notifyListeners();
+  }
+
+  String get company_Id => _companyId;
+
   void createCompanyUser(
       {String company_name,
       String industry,
@@ -70,6 +79,14 @@ class RegisterBloc extends ChangeNotifier {
     Service.createCompanyUser(
             company_name, industry, address, city, email, password)
         .then((value) {
+      setcompany_name(company_name);
+      setaddress(address);
+      setcity(city);
+      setmail(email);
+      setpassword(password);
+
+      Map<String, dynamic> body = json.decode(value);
+      setId(body["company_id"]);
       DebugHelper.green(
           company_name + industry + address + city + email + password);
     });
