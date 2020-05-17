@@ -16,7 +16,6 @@ class Orders extends StatelessWidget {
         children: <Widget>[
           GenericBody(
             title: "Current Orders",
-            
           ),
           _header(context),
           Positioned(
@@ -62,7 +61,7 @@ class Orders extends StatelessWidget {
     );
   }
 
-_header(BuildContext context) {
+  _header(BuildContext context) {
     return Positioned(
         top: 260.h,
         child: Container(

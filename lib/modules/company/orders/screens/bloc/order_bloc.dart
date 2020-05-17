@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:ruhacks/debug/helper/debug_helper.dart';
 import 'package:ruhacks/services/service.dart';
 
 class OrderBloc extends ChangeNotifier {
@@ -39,8 +40,7 @@ class OrderBloc extends ChangeNotifier {
             name, customerName, employee_id, status, isUrgent, estComp)
         .then((value) {
       dynamic result = json.decode(value);
-      setemployee_Id(result["employee_id"]);
-      DebugHelper.green(result["employee_id"]);
+      DebugHelper.green(result["workflow_id"]);
     });
   }
 }

@@ -219,8 +219,7 @@ class _AddOrdersState extends State<AddOrders> {
                     child: Material(
                       color: Colors.transparent,
                       child: InkWell(
-                          onTap: () =>
-                              Navigator.pushNamed(context, Orders.route),
+                          onTap: () {},
                           child: Padding(
                             padding: const EdgeInsets.all(10.0),
                             child: Center(
