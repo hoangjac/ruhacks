@@ -27,7 +27,7 @@ class Main extends StatelessWidget {
           ChangeNotifierProvider.value(value: OrderBloc()),
         ],
         child: MaterialApp(
-          home: CompanyHome(),
+          home: Home(),
           debugShowCheckedModeBanner: false,
           theme: AppTheme.themeData,
           routes: {

@@ -24,7 +24,7 @@ class Orders extends StatelessWidget {
                   height: 1000.h,
                   width: MediaQuery.of(context).size.width,
                   child: ListView.builder(
-                      itemCount: 2,
+                      itemCount: 3,
                       itemBuilder: (BuildContext context, int i) {
                         String text;
                         String services;
