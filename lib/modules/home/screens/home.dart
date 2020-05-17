@@ -65,7 +65,7 @@ class Home extends StatelessWidget {
                   width: 600.w,
                   text: "Sign up",
                   showPrimary: true,
-                  action: () => Navigator.pushNamed(context, CompanyHome.route),
+                  action: () => Navigator.pushNamed(context, Register.route),
                 ),
                 Row(
                   mainAxisSize: MainAxisSize.min,

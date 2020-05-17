@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:ruhacks/debug/helper/debug_helper.dart';
 import 'package:ruhacks/modules/company/home/screens/company_home.dart';
 import 'package:ruhacks/theme/display.dart';
 import 'package:ruhacks/theme/generic_button.dart';
-
+import 'package:ansicolor/ansicolor.dart';
 import 'package:ruhacks/theme/materialField.dart';
 
 class Register extends StatefulWidget {
@@ -17,7 +18,6 @@ class _RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
     ScreenUtil.init(context);
-    print("here");
     return Scaffold(
       body: Container(
           height: MediaQuery.of(context).size.height,
@@ -26,11 +26,6 @@ class _RegisterState extends State<Register> {
               borderRadius: BorderRadius.only(topRight: Radius.circular(100.h)),
               gradient: LinearGradient(
                   colors: [Color(0xFFF6F7FB), Color(0xfff6f7fb)])),
-
-          //                           padding: EdgeInsets.fromLTRB(80.w, 20.h, 80.w, 100.h),
-
-//            padding: EdgeInsets.fromLTRB(100.w, 20.h, 40.w, 100.h),
-
           child: Padding(
             padding: EdgeInsets.fromLTRB(80.w, 20.h, 80.w, 100.h),
             child: ListView(

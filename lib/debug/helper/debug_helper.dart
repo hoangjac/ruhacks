@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class DebugHelper {
   static void white(dynamic text) {
     AnsiPen pen = new AnsiPen()..white(bold: true);
-    print(pen(text.toString()));
+    print(pen(text));
   }
 
   static void green(dynamic text) {
