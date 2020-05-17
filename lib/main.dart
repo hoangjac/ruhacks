@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:ruhacks/modules/company/auth/bloc/register_bloc.dart';
 import 'package:ruhacks/modules/company/employee/bloc/company_employee_bloc.dart';
@@ -12,8 +11,8 @@ import 'package:ruhacks/modules/company/employee/screens/employee_login.dart';
 import 'package:ruhacks/modules/company/employee/screens/employee_home.dart';
 import 'package:ruhacks/modules/company/employee/screens/employee_orders.dart';
 
-import 'modules/company/auth/screens/register.dart';
 import 'modules/home/screens/home.dart';
+import 'modules/company/auth/screens/register.dart';
 
 void main() => runApp(Main());
 

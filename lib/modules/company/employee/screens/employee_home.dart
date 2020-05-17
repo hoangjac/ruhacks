@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ruhacks/modules/company/employee/screens/add_employees.dart';
+import 'package:ruhacks/modules/company/employee/screens/employee_orders.dart';
 import 'package:ruhacks/modules/company/employee/widgets/generic_card.dart';
 import 'package:ruhacks/modules/company/orders/screens/add_orders.dart';
 import 'package:ruhacks/theme/display.dart';
@@ -64,11 +65,13 @@ class EmployeeHome extends StatelessWidget {
             GenericCard(
               height: 350.h,
               width: 900.w,
-              action: () {},
-              text: "My Orders",
-              // image: "images/orders.png",
-              //imgHeight: 350.h,
-              //imgWidth: 500.w,
+              action: () => Navigator.pushNamed(context, EmployeeOrders.route),
+              text: "Orders",
+              image: "images/orders.png",
+              imgHeight: 350.h,
+              imgWidth: 400.w,
+              x_align: 0.0,
+              y_align: 0.0,
             ),
             SizedBox(
               height: 90.h / 2,
@@ -84,9 +87,11 @@ class EmployeeHome extends StatelessWidget {
                       action: () =>
                           Navigator.pushNamed(context, AddOrders.route),
                       text: "Analytics",
-                      // image: "images/addorders.png",
-                      //imgHeight: 300.h,
-                      //imgWidth: 400.w,
+                      image: "images/analytics.png",
+                      imgHeight: 350.h,
+                      imgWidth: 400.w,
+                      x_align: 0.0,
+                      y_align: 0.0,
                     ),
                     SizedBox(
                       width: 90.w / 2,
@@ -97,9 +102,11 @@ class EmployeeHome extends StatelessWidget {
                       action: () =>
                           Navigator.pushNamed(context, AddEmployees.route),
                       text: "Reviews",
-                      //image: "images/addemployee.png",
-                      //imgHeight: 250.h,
-                      //imgWidth: 350.w,
+                      image: "images/person.png",
+                      imgHeight: 140,
+                      imgWidth: 145,
+                      x_align: 0.0,
+                      y_align: 0.3,
                     ),
                   ],
                 ),
@@ -117,6 +124,7 @@ class EmployeeHome extends StatelessWidget {
           BottomNavigationBarItem(
             icon: Icon(Icons.person_outline),
             title: Text('Profile'),
+            
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),

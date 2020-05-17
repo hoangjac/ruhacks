@@ -45,7 +45,7 @@ class Home extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.fromLTRB(80.h, 40.h, 10.h, 40.h),
                   child: Text(
-                    "Start letting your\ncustomers know what \nyou’re doing with Trackio",
+                    "Start letting your\ncustomers know what \nyou’re doing with \nTrackio",
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: 65.h,

@@ -10,9 +10,12 @@ class GenericCard extends StatelessWidget {
   final double width;
   final bool showPrimary;
   //replace employee png with the image, you may modify this if needed
-  //final String image;
-  //final double imgWidth;
-  //final double imgHeight;
+  final String image;
+  final double imgWidth;
+  final double imgHeight;
+  final double x_align;
+  final double y_align;
+
 
   const GenericCard({
     this.action,
@@ -21,9 +24,11 @@ class GenericCard extends StatelessWidget {
     this.height,
     this.width,
     this.showPrimary,
-    //this.image,
-    //this.imgWidth,
-    //this.imgHeight,
+    this.image,
+    this.imgWidth,
+    this.imgHeight,
+    this.x_align,
+    this.y_align,
     
   });
   @override
@@ -55,12 +60,12 @@ class GenericCard extends StatelessWidget {
               borderRadius: BorderRadius.circular(30.h),
             ),
           ),
-          /*Image.asset(
+          Image.asset(
             image,
             width: imgWidth,
             height: imgHeight,
-            fit: BoxFit.contain,
-          ), */
+            alignment: Alignment(x_align, y_align),
+          ),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Display(

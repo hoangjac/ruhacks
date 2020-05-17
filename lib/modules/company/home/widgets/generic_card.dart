@@ -29,6 +29,7 @@ class GenericCard extends StatelessWidget {
     this.x_align,
     this.y_align,
   });
+  
   @override
   Widget build(BuildContext context) {
     return GestureDetector(

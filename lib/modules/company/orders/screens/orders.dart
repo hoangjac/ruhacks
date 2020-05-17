@@ -15,7 +15,8 @@ class Orders extends StatelessWidget {
       body: Stack(
         children: <Widget>[
           GenericBody(
-            title: "Orders",
+            title: "Current Orders",
+            
           ),
           _header(context),
           Positioned(
@@ -27,7 +28,7 @@ class Orders extends StatelessWidget {
                       itemCount: 3,
                       itemBuilder: (BuildContext context, int i) {
                         return Padding(
-                          padding: EdgeInsets.fromLTRB(85.h, 40.h, 85.w, 10.h),
+                          padding: EdgeInsets.fromLTRB(85.h, 10.h, 85.w, 10.h),
                           child: GenericOrdersCard(
                             height: 240.h,
                             width: MediaQuery.of(context).size.width,
@@ -39,7 +40,7 @@ class Orders extends StatelessWidget {
                       }))),
           _header2(context),
           Positioned(
-              top: MediaQuery.of(context).size.height / 1.65,
+              top: MediaQuery.of(context).size.height / 1.60,
               child: Container(
                   height: 1000.h,
                   width: MediaQuery.of(context).size.width,
@@ -47,7 +48,7 @@ class Orders extends StatelessWidget {
                       itemCount: 3,
                       itemBuilder: (BuildContext context, int i) {
                         return Padding(
-                          padding: EdgeInsets.fromLTRB(85.h, 40.h, 85.w, 10.h),
+                          padding: EdgeInsets.fromLTRB(85.h, 10.h, 85.w, 10.h),
                           child: GenericOrdersAssignedCard(
                             height: 240.h,
                             width: MediaQuery.of(context).size.width,
@@ -61,7 +62,7 @@ class Orders extends StatelessWidget {
     );
   }
 
-  _header(BuildContext context) {
+_header(BuildContext context) {
     return Positioned(
         top: 260.h,
         child: Container(
@@ -106,7 +107,7 @@ class Orders extends StatelessWidget {
                   child: Divider(
                     color: Theme.of(context).primaryColor,
                   ),
-                  width: MediaQuery.of(context).size.width / 1.2,
+                  width: MediaQuery.of(context).size.width / 1.17,
                   height: 0.1,
                 ),
               ],
