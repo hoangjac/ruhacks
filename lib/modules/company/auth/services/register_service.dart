@@ -1,25 +1,52 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:http/http.dart';
 
 class RegisterService {
-  static final String _url =
-      'https://us-central1-aiot-fit-xlab.cloudfunctions.net/servemequick';
+  static final String _url = 'https://jsonplaceholder.typicode.com/posts';
+  static final Map<String, String> _headers = {
+    "Content-Type": "application/json",
+  };
 
-  static Future<http.Response> post(String company_name, String industry,
-      String address, String city, String email, String password) async {
-    var map = new Map<String, dynamic>();
-    map['grant_type'] = 'password';
-    map['client_id'] =
-        '3MVG9dZJodJWITSviqdj3EnW.LrZ81MbuGBqgIxxxdD6u7Mru2NOEs8bHFoFyNw_nVKPhlF2EzDbNYI0rphQL';
-    map['client_secret'] =
-        '42E131F37E4E05313646E1ED1D3788D76192EBECA7486D15BDDB8408B9726B42';
-    map['username'] = 'example@mail.com.us';
-    map['password'] = 'ABC1234563Af88jesKxPLVirJRW8wXvj3D';
+  static Future<http.Response> createCompanyUser(
+      String company_name,
+      String industry,
+      String address,
+      String city,
+      String email,
+      String password) async {
+    /*
+  {
+   "company_name":"godfatherpizza",
+   "industry":"food",
+   "address":"ur momma house",
+   "city":"vancouver",
+   "email":"test@test.com",
+   "password":"password"
+}
+        */
 
-    return await http.post(
-      _url + "/adduser",
-      body: map,
-    );
+    // set up POST request arguments
+    // set up POST request arguments
+    String url = 'https://jsonplaceholder.typicode.com/posts';
+    Map<String, String> headers = {"Content-type": "application/json"};
+    String json = '{"title": "Hello", "body": "body text", "userId": 1}';
+    // make POST request
+    return post(url, headers: headers, body: json);
+    // check the status code for the result
+
+    // {
+    //   "title": "Hello",
+    //   "body": "body text",
+    //   "userId": 1,
+    //   "id": 101
+    // }
+    // {
+    //   "title": "Hello",
+    //   "body": "body text",
+    //   "userId": 1,
+    //   "id": 101
+    // }
   }
 
   /*
