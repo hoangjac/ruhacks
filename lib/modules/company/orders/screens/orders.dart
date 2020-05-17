@@ -24,16 +24,32 @@ class Orders extends StatelessWidget {
                   height: 1000.h,
                   width: MediaQuery.of(context).size.width,
                   child: ListView.builder(
-                      itemCount: 3,
+                      itemCount: 2,
                       itemBuilder: (BuildContext context, int i) {
+                        String text;
+                        String services;
+
+                        if (i == 0) {
+                          text = "Jason";
+                          services = "Oil Change";
+                        }
+                        if (i == 1) {
+                          text = "Jack";
+                          services = "Phone Repair";
+                        }
+                        if (i == 2) {
+                          text = "Tsu";
+                          services = "SLACK BOT";
+                        }
                         return Padding(
                           padding: EdgeInsets.fromLTRB(85.h, 10.h, 85.w, 10.h),
                           child: GenericOrdersCard(
                             height: 240.h,
                             width: MediaQuery.of(context).size.width,
-                            text: "Customer Name",
+                            text: text,
+                            serviceName: services,
                             showAssign: true,
-                            isUrgent: false,
+                            isUrgent: i % 2 == 0 ? true : false,
                           ),
                         );
                       }))),
@@ -44,15 +60,31 @@ class Orders extends StatelessWidget {
                   height: 1000.h,
                   width: MediaQuery.of(context).size.width,
                   child: ListView.builder(
-                      itemCount: 3,
+                      itemCount: 2,
                       itemBuilder: (BuildContext context, int i) {
+                        String text;
+                        String services;
+
+                        if (i == 0) {
+                          text = "Jason";
+                          services = "Oil Change";
+                        }
+                        if (i == 1) {
+                          text = "Jack";
+                          services = "Phone Repair";
+                        }
+                        if (i == 2) {
+                          text = "Tsu";
+                          services = "SLACK BOT";
+                        }
                         return Padding(
                           padding: EdgeInsets.fromLTRB(85.h, 10.h, 85.w, 10.h),
                           child: GenericOrdersAssignedCard(
                             height: 240.h,
                             width: MediaQuery.of(context).size.width,
-                            text: "Customer Name",
-                            isUrgent: false,
+                            text: text,
+                            serviceName: services,
+                            isUrgent: i % 2 == 0 ? true : false,
                           ),
                         );
                       }))),

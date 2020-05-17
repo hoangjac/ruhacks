@@ -86,13 +86,18 @@ class RegisterBloc extends ChangeNotifier {
       setpassword(password);
 
       Map<String, dynamic> body = json.decode(value);
-      setcompany_id(body["company_id"]);
+      setcompany_id("c37");
       DebugHelper.green(company_name +
           industry +
+          "\n" +
           address +
+          "\n" +
           city +
+          "\n" +
           email +
+          "\n" +
           password +
+          "\n" +
           body["company_id"]);
     });
   }

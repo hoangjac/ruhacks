@@ -5,7 +5,7 @@ import 'package:ruhacks/debug/helper/debug_helper.dart';
 import 'package:ruhacks/services/service.dart';
 
 class CompanyEmployeeBloc extends ChangeNotifier {
-  String _companyId;
+  String _companyId = "c37";
   String _employeeId;
   String _email;
   String _name;
