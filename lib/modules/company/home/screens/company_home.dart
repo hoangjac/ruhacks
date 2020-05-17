@@ -65,6 +65,9 @@ class CompanyHome extends StatelessWidget {
                 width: 900.w,
                 action: () {},
                 text: "Orders",
+                image: "images/orders.png",
+                imgHeight: 350.h,
+                imgWidth: 500.w, 
               ),
               SizedBox(
                 height: 90.h / 2,
@@ -76,20 +79,26 @@ class CompanyHome extends StatelessWidget {
                     children: <Widget>[
                       GenericCard(
                         height: 350.h,
-                        width: 450.w,
+                        width: 425.w,
                         action: () =>
                             Navigator.pushNamed(context, AddOrders.route),
                         text: "Add Orders",
+                        image: "images/addorders.png",
+                        imgHeight: 300.h,
+                        imgWidth: 400.w,
                       ),
                       SizedBox(
                         width: 90.w / 2,
                       ),
                       GenericCard(
                         height: 350.h,
-                        width: 450.w,
+                        width: 425.w,
                         action: () =>
                             Navigator.pushNamed(context, AddEmployees.route),
                         text: "Add\nEmployees",
+                        image: "images/addemployee.png",
+                        imgHeight: 250.h,
+                        imgWidth: 350.w,
                       ),
                     ],
                   ),
@@ -103,6 +112,9 @@ class CompanyHome extends StatelessWidget {
                 width: 900.w,
                 action: () {},
                 text: "Analytics",
+                image: "images/analytics.png",
+                imgHeight: 600.h,
+                imgWidth: 800.w,
               ),
             ],
           ),

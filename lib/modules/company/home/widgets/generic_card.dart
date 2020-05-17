@@ -11,14 +11,22 @@ class GenericCard extends StatelessWidget {
   final bool showPrimary;
   //replace employee png with the image, you may modify this if needed
   final String image;
-  const GenericCard(
-      {this.action,
-      this.color,
-      this.text,
-      this.height,
-      this.width,
-      this.showPrimary,
-      this.image});
+  final double imgWidth;
+  final double imgHeight;
+  final String alignment;
+
+  const GenericCard({
+    this.action,
+    this.color,
+    this.text,
+    this.height,
+    this.width,
+    this.showPrimary,
+    this.image,
+    this.imgWidth,
+    this.imgHeight,
+    this.alignment,
+  });
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -48,7 +56,12 @@ class GenericCard extends StatelessWidget {
               borderRadius: BorderRadius.circular(30.h),
             ),
           ),
-          Image.asset("images/addemployee.png"),
+          Image.asset(
+            image,
+            width: imgWidth,
+            height: imgHeight,
+            fit: BoxFit.contain,
+          ),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Display(
