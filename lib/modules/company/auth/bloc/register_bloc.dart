@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:ruhacks/debug/helper/debug_helper.dart';
-import 'package:ruhacks/modules/company/auth/services/register_service.dart';
+import 'package:ruhacks/services/register_service.dart';
 
 class RegisterBloc extends ChangeNotifier {
   String _company_name;
@@ -67,7 +67,7 @@ class RegisterBloc extends ChangeNotifier {
     if (company_name == null) {
       DebugHelper.red("null");
     }
-    RegisterService.createCompanyUser(
+    Service.createCompanyUser(
             company_name, industry, address, city, email, password)
         .then((value) {
       DebugHelper.green(

@@ -274,29 +274,14 @@ class _RegisterState extends State<Register> {
                         text: "Create an Account",
                         showPrimary: false,
                         action: () async {
-                          // set up POST request arguments
-                          String json =
-                              '{"company_name": "123", "industry": "2 text", "address": "1", "city": "sss", "email":"ssss", "password":"email"}';
-                          Map<String, String> headers = {
-                            "Content-type": "application/json"
-                          };
-                          String url =
-                              'https://us-central1-aiot-fit-xlab.cloudfunctions.net/servemequickadduser';
-                          // make POST request
-                          Response response =
-                              await post(url, headers: headers, body: json);
-                          // check the status code for the result
-                          int statusCode = response.statusCode;
-                          // this API passes back the id of the new item added to the body
-                          String body = response.body;
-                          print(response.body);
-                          // {
-                          //   "title": "Hello",
-                          //   "body": "body text",
-                          //   "userId": 1,
-                          //   "id": 101
-                          // }
-                          //Navigator.of(context).pushNamed(CompanyHome.route);
+                          provider.createCompanyUser(
+                              address: _companyAddress.text,
+                              city: "Toronto",
+                              company_name: _companyName.text,
+                              email: _emailAddress.text,
+                              industry: _industry.text,
+                              password: _password.text);
+                          Navigator.of(context).pushNamed(CompanyHome.route);
                         }),
                   )
                 ],
