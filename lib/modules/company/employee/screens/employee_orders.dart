@@ -25,12 +25,22 @@ class EmployeeOrders extends StatelessWidget {
                   child: ListView.builder(
                       itemCount: 3,
                       itemBuilder: (BuildContext context, int i) {
+                        String name = " ";
+                        if (i == 0) {
+                          name = "Jack C";
+                        }
+                        if (i == 1) {
+                          name = "Sahal Mohammed";
+                        }
+                        if (i == 2) {
+                          name = "Orrin Cruiz";
+                        }
                         return Padding(
                           padding: EdgeInsets.fromLTRB(85.h, 10.h, 85.w, 10.h),
                           child: GenericOrdersAssignedCar(
                             height: 150.h,
                             width: MediaQuery.of(context).size.width,
-                            text: "Customer Name",
+                            text: name,
                             showAssign: false,
                             isUrgent: true,
                           ),
